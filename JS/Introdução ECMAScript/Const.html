@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+<!--    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
+
+    <script type="">
+		
+		// Por bom hábitos, a variável const é sempre declarada com caixa alta
+		
+		// uma variável const não pode sofrer alterações, geralmente usada em apis ou senha.
+		
+        const SERIE = 'Friends'
+
+        console.log(SERIE)
+
+        //    SERIE = 'The Walking Dead' (cuidado!)
+        function x() {
+            const SERIE = 'The Walking Dead'
+            console.log('Dentro da função: ' + SERIE)
+        }
+		
+		
+		
+		x()
+		
+		
+        console.log('Fora da função: ' + SERIE)
+
+		
+		// importante tomar cuidado com os escopos, para não sobrepor a outra ou declarar a variavel constante sem valor.
+    </script>
+</head>
+
+<body>
+    <div id="output"></div>
+</body>
+
+</html>

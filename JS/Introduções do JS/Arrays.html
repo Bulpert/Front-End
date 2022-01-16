@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exercício de Array</title>
+</head>
+
+<body>
+      <label>Pacientes:</label>  <input id="pacientes">
+    
+        <br>
+    
+        <br>
+        
+
+<!--             Botão que aplicará a função Adicionar no Final do Vetor Pacientes-->
+         <button id="adicionar" onClick="adicionarFim()">Adicionar no Fim</button>
+    
+    
+<!--             Botão que aplicará a função Adicionar Pacientes-->
+         <button id="adicionar" onClick="adicionar()">Adicionar no Começo</button>
+    
+        
+    
+<!--             Botão que aplicará a função Remover Primeiro Paciente-->
+         <button id="removerPrimeiro" onClick="removerPrimeiro()">Remover Primeiro</button>
+    
+    
+<!--             Botão que aplicará a função Remover Ultimo Paciente-->
+         <button id="removerUltimo" onClick="removerUltimo()">Remover Ultimo</button>
+    
+    
+<!--             Botão que aplicará a função Filtrar Pacientes-->
+         <button id="filtrar" onClick="filtrar ()">Filtrar</button>
+    
+<!--             Botão que encontrar posições vazias no vetor-->
+         <button id="adicionar" onClick="contar()">Contar Elementos Válidos</button>
+
+        <br>
+    
+<!--              ID que receberá os daods dos Pacientes-->
+        <p id="exibirPacientes"></p>
+</body>
+    
+ 
+    
+    
+    
+    
+<script>
+    
+        
+    
+var pacientes = [];
+    
+    
+  
+    
+function adicionarFim()
+        {
+            
+//          Limpando o resultado 
+            document.getElementById('exibirPacientes').innerHTML = "";
+            
+            var paciente = document.getElementById('pacientes').value;
+            
+            
+            // não pode iniciar undefined, Atribuindo o valor informado no input na primeira posição do Vetor
+             if(pacientes.indexOf(paciente) !== -1)
+                    {
+                        alert("Esse paciente ja está cadastrado!")
+                    } 
+            
+                 else
+                    {
+                      pacientes.push(paciente);
+
+                    }
+           
+            
+        
+            
+//          Função para exibir os Pacientes
+            exibirPacientes ();
+        }    
+    
+    
+function adicionar()
+        {
+            
+//          Limpando o resultado 
+            document.getElementById('exibirPacientes').innerHTML = "";
+            
+            var paciente = document.getElementById('pacientes').value;
+            
+            
+            // não pode iniciar undefined, Atribuindo o valor informado no input na primeira posição do Vetor
+            
+            
+                 if(pacientes.indexOf(paciente) !== -1)
+                    {
+                        alert("Esse paciente ja está cadastrado!")
+                    } 
+            
+                 else
+                    {
+                      pacientes.unshift(paciente);
+
+                    }
+                
+                
+            
+           
+          
+        
+            
+            
+            
+        
+            
+//          Função para exibir os Pacientes
+            exibirPacientes ();
+        }
+    
+
+
+
+        
+        
+function removerPrimeiro()
+        {
+            
+        
+
+            
+//          Limpando o resultado 
+            document.getElementById('exibirPacientes').innerHTML = "";
+            
+            
+//          Método para remover o primeiro elemento do Vetor            
+            pacientes.shift();
+            
+            
+//          Função para exibir os Pacientes
+            exibirPacientes ();
+            
+        }
+        
+        
+
+function removerUltimo()
+        {
+            
+        
+
+//          Limpando o resultado 
+            document.getElementById('exibirPacientes').innerHTML = "";
+            
+            
+//          Método para remover o ultimo elemento do Vetor
+            pacientes.pop();
+            
+            
+            
+//          Função para exibir os Pacientes
+            exibirPacientes ();
+            
+        }        
+        
+             
+        
+
+        
+function filtrar ()
+        {
+            
+            var verificador = 0;
+            
+              document.getElementById('exibirPacientes').innerHTML = "";
+            
+            for(var i = 0;i < pacientes.length; i++)
+                {
+               
+                    
+                    
+            var paciente = document.getElementById('pacientes').value;        
+            // Usando o método indexOf() para localizar pelo menos 1 caractere do nome do paciente paciente (para filtrar corretamente)      
+            if(pacientes[i].indexOf(paciente)!= -1)
+               {
+                document.getElementById('exibirPacientes').innerHTML += "Posição: "+i+" Paciente: "+pacientes[i]+"<br>";
+
+               }
+                
+               
+                    
+                    
+                }
+            
+
+        }
+        
+        
+    
+function exibirPacientes ()
+        {
+             
+            
+            for(var i = 0;i < pacientes.length; i++)
+                {
+                  
+                  // Exibindo os pacientes
+                  document.getElementById('exibirPacientes').innerHTML += "Posição: "+i+" Paciente: "+pacientes[i]+"<br>";
+                    
+                    
+                }
+            
+           
+
+            
+            
+        }    
+    
+    
+function contar(){
+    
+        
+        var elementosValidos = 0;
+        var elementosInvalidos = 0;
+    
+            
+        for(var i = 0; i < pacientes.length; i++)
+            {
+                if(pacientes[i] == '')
+                    {
+                       elementosInvalidos++; 
+                    }
+                else
+                    {
+                       elementosValidos++; 
+                    }
+                
+            }
+    
+        // Exibindo os pacientes
+        document.getElementById('exibirPacientes').innerHTML += "<br>Quantidade de Elementos vazios: "+elementosInvalidos+"<br> Quantidade de posições preenchidas dentro do vetor: "+elementosValidos+"<br>";
+                    
+}
+            
+    
+    
+    
+    </script>
+</html>

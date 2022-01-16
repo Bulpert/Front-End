@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exercício de Array Multidimensional</title>
+</head>
+
+<body>
+      <label>Pacientes:</label>  <input id="pacientes"> <label>Médico:</label>  <input id="medico">
+    
+        <br>
+    
+        <br>
+        
+    
+<!--             Botão que aplicará a função Adicionar Pacientes-->
+         <button id="adicionar" onClick="adicionar()">Adicionar</button>
+    
+        
+    
+
+    
+    
+
+        <br>
+    
+<!--              ID que receberá os dados dos Pacientes e Médico-->
+        <p id="exibirPacientes"></p>
+</body>
+    
+ 
+    
+    
+    
+    
+<script>
+    
+    
+var consulta = Array();
+   
+consulta['pacientes'] = [];
+    
+consulta['medico'] = [];
+    
+    
+    
+
+    
+    
+    
+    
+    
+function adicionar()
+        {
+            
+//          Limpando o resultado 
+            document.getElementById('exibirPacientes').innerHTML = "";
+            
+            var paciente = document.getElementById('pacientes').value;
+            
+            var medico = document.getElementById('medico').value;
+            
+            
+            // não pode iniciar undefined, método push() serve para incluir uma novo elementos na ultima posição
+            consulta['pacientes'].push("");
+            consulta['medico'].push("");
+        
+            
+            // Atribuindo o valor informado no input na respectiva posição do vetor
+            consulta['pacientes'][0] = paciente;
+            consulta['medico'][0] = medico;
+            
+        
+            
+//          Função para exibir os Pacientes
+            exibirPacientes ();
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+function exibirPacientes ()
+        {
+             
+            
+            for(var i = 0;i < consulta['pacientes'].length; i++)
+                {
+                  
+                  // Exibindo os pacientes
+                  document.getElementById('exibirPacientes').innerHTML += "Posição: "+i+" Paciente: "+consulta['pacientes'][i]+", Médico resposável:"+consulta['medico'][i]+"<br>";
+                    
+                    
+                }
+                 
+            
+        }  
+
+    
+    
+    
+    </script>
+</html>

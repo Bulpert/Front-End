@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Página Principal</title>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    
+<!--É interessante colocar seu link CSS após o Bootstrap, pois assim você consegue sobrepor seu estilo sobre o do bootstrap.-->
+    
+<link rel="stylesheet" href="style.css" />
+    
+<script>
+    function iniciarGame (){
+       var nivel = document.getElementById('nivel').value
+       
+       if(nivel === ''){
+           alert('Selecione um nível para inicar o jogo')
+           return false
+       }
+        
+       window.location.href = 'app.html?' + nivel
+    }
+    
+</script>    
+
+</head>
+
+<body>
+    
+    <div class="container">
+    
+        <div class="row">
+        
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <img src="imagens/game.png" />
+                </div>
+            </div>
+        
+        </div>
+    
+        
+        
+        <div class="row">
+        
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <div class="mb-2">
+                        <select class="form-control" id="nivel">
+                            <option value="">-- Selecione o Nível -- </option>
+                            <option value="facil">Fácil</option>
+                            <option value="normal">Normal</option>
+                            <option value="dificil">Difícil</option>
+                        </select>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+        
+        
+         <div class="row">
+        
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    
+                        
+                         <button type="button" class="btn btn-danger btn-lg" onClick="iniciarGame()">Iniciar Game</button>
+                 
+                </div>
+            </div>
+        
+        </div>
+        
+        
+    </div>
+    
+</body>
+</html>

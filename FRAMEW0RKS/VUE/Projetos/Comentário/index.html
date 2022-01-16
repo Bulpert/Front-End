@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous" >
+<title>Programinha de Comentário</title>
+</head>
+
+<body>
+	<div id="app"></div>
+	
+
+
+	
+	
+	
+	
+	
+<!--	APONTANDO PARA O VUE.JS-->
+	<script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	
+	
+	<script>
+	new Vue({
+		el: '#app',
+		template: `
+
+		<div class="container">
+		
+		<h1>Comentários</h1>
+		
+		<hr>
+		
+		
+		
+		
+
+		<div class="form-todo form-group">
+			
+			<p>
+				<input placeholder="Digite seu nome" type="text" name="author" class="form-control" v-model="name">
+			</p>
+			
+			
+			<p>
+				<textarea placeholder="Informe seu comentário"  name="author" class="form-control" v-model="message">
+					
+				</textarea>
+			</p>
+			
+			<button v-on:click="addComment" type="submit" class="btn-primary">Comentar</button>
+		
+		</div>
+
+		
+		
+		
+		
+		<div class="list-group">
+			
+			<div class="list-group-item" v-for="(comment, index) in allComments">
+				<span class="comment__author">Autor <strong>{{comment.name}}</strong>
+				</span>
+				
+				<p>{{comment.message}}</p>
+			
+			
+			
+			<div>
+				<a href="#" title="Excluir" v-on:click.prevent="removeComment(index)">Excluir</a>
+			</div>
+			
+		</div>
+		
+		<hr>
+	</div>  
+
+`,
+		data() {
+			return {
+				
+//				declarando o array
+				comments: [],
+				
+				
+		// declarando as variáveis do array, e lá no input utilizaremos o v-model para ligar o toDataBase com o Vue.js, e atribuiremos a variável no respectivo input
+				name: '',
+				message: ''
+			}
+		},
+		// Criando o methods, para incluir as funções a ser chamadas dentro dele
+		methods: {
+			addComment() {
+				
+				
+//				Aqui iremos aplicar uma simples validação, para preencherem apenas informações válidas, usando também o métod trim(), para apagar os espaços em brancos, e complementando com o método isNaN para não permitir preencher o campo de nome com números 'isNaN(this.name) == false'
+				if(this.message.trim() === ''){
+					return
+				}
+				
+				this.comments.push({
+					
+					name: this.name,
+					message: this.message
+					
+				})
+				
+				this.name = ''
+				this.message = ''
+			},
+			// para pegarmos o valor contigo no marcação de texto do template, utilizaremos o v-for (comment, index), fazendo assim com o index receba o valor da POSIÇÃO do array 
+			removeComment(index) {
+				
+				// aqui aplicaremos o método splice, onde ele faz substituições dentro de um array quando passado os parâmetros, mas quando você não passa, ele apenas remove, no exemplo abaixo, removeremos apenas 1 elemento da posição em questão
+				this.comments.splice(index, 1)
+			}
+		},
+		
+		
+		// aqui em computed, é onde tratamos os dados, mas de forma visual apenas (costumização)
+		computed: {
+			allComments() {
+				return this.comments.map(comment => ({
+					...comment,
+					name: comment.name.trim() === '' ? 'Anonymous' : comment.name
+				}))
+			}
+			
+		},
+		
+		// Aqui podemos monitorar qualquer alteração de qualquer propriedade e tomar uma ação
+		watch: {
+			comments(val) {
+				console.log('val', val)
+			}
+		}
+		
+	})
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//	a propriedade prevent, evita que a tela fique subindo pro topo toda vez que vc interege com a page
+	</script>
+</body>
+</html>

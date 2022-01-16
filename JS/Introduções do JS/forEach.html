@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+
+
+  <script>
+  
+	 // Declarando o array dessa forma, nós podemos manipular diretamente os elementos 
+	  
+    var listaNomes = Array()
+	
+	
+	
+	// lembrando que ele só irá retornar os valores onde os indices for igual ou maior que zero
+	
+	
+    listaNomes['x'] = 'será ignorado'
+    listaNomes[false] = 'será ignorado'
+    listaNomes[3] = 'Robert'
+    listaNomes[27] = 'Charles'
+    listaNomes[-12] = 'será ignorado'
+   
+
+	 // aqui iremos declarar uma variável que receberá como valor uma função inteira para usarmos o conceito de callback no parametro do forEach
+	  
+	  // nesse exemplo só quero recuperar valor e indice
+    var parametro = function(valor, indice){
+		
+	  if(valor == 'Robert'){
+		  
+		   document.write(`Aluno: ${valor} no índice ${indice}<br><br>`)
+	  } else {
+		   document.write(`Professor: ${valor} no índice ${indice}<br><br>`)
+	  }
+     
+    }
+
+	
+	// Aqui iremos executar o método forEach em cima do array que definimos lá em cima, passando como parametro o callback que criamos e incluimos na variáveç 'parametro'
+    listaNomes.forEach(parametro)
+   
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

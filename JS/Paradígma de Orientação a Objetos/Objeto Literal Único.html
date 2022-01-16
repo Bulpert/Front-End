@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+
+  
+
+    <script>
+
+		// Ao atribuir o objeto literal em uma nova variável, você não duplica o objeto, mas sim, cria uma nova instancia para para o objeto, podendo chama-lo de duas formas, tantao quanto 'assinatura' quanto 'y'
+		
+		
+      let assinatura = {
+        idCliente: 1000,
+        descricao: 'Acesso a internet',
+        status() {
+          console.log('Ativo')
+        }
+      }
+
+      console.log(assinatura.descricao)
+
+      let y = assinatura
+
+      console.log(y.descricao)
+
+      ///
+      y.descricao = 'Internet + tv + telefone'
+
+      console.log(assinatura.descricao)
+      console.log(y.descricao)
+
+    </script>
+    
+  </head>
+  <body>
+    
+  </body>
+</html>

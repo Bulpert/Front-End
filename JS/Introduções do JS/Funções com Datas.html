@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sem título</title>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+<script>
+// Um pouco sobre as funções com datas, lembrando que no JS as datas são de acordo com o calendário americano
+    
+    
+    
+
+var data = new Date()
+  
+
+// Usando o método get em data, serve para recuperar valores
+
+// getData() Dias
+// getMonth() Mês, o +1 serve para ele não iniciar no mês zero, pois não existe, ele precisa começar no mês 1 (janeiro)
+// getFullYear() Ano
+
+
+document.write(data.getDate()+ "/" +(data.getMonth()+1)+"/"+ data.getFullYear())
+    
+    
+    
+    
+    
+document.write("<hr><br>")
+
+    
+    
+    
+// Método setDate() usado para manipular dias
+data.setDate(data.getDate()* 2)
+document.write(data.toString())
+document.write('<br><hr><br>')
+    
+    
+    
+// Método setMounth() usado para manipular meses
+data.setMonth(data.getMonth()+ 5)
+document.write(data.toString())
+document.write('<br><hr><br>')
+
+    
+
+// Método setFullYear() usado para manipular meses
+data.setFullYear(data.getFullYear()- 6)
+document.write(data.toString())
+document.write('<br><hr><br>')
+    
+    
+    
+    
+var dataOne = new Date(2021,10,10);
+    
+var dataTwo = new Date(2021,10,19);
+    
+    
+// Converter datas para algo em que possamos fazer cálculos
+    
+// no Método getTime() é usado para calcular os milissegundos com base da data padrão da internet "1 de janeiro de 1970"
+    
+document.write("Data I: "+dataOne+"e Milissegundos: " +dataOne.getTime());
+document.write("<hr>");
+document.write("Data I: "+dataTwo+"e Milissegundos: " +dataTwo.getTime());
+    
+    
+document.write("<br><Br><hr>Cálculos da Data I e II abaixo:<br><br>");
+    
+    
+// nesse cálculo iremos aplicar o método Math.abs(), que força o um resultado abssoluto, não permitindo trazer um valo negativo
+    
+    
+
+var milissegundos_entre_datas =  Math.abs(dataOne.getTime() - dataTwo.getTime());   
+
+var milissegundos_por_dias = 1*24*60*60*1000;
+    
+document.write();
+    
+    
+// no cálculo abaixo iremos descobrir quantos milissegundos há em uma dia
+    
+document.write("<br><br> 1 dia tem: " +milissegundos_por_dias+ " milissegundos")
+    
+    
+    
+// No cálculo abaixo, mostraremos a quantidade em dias e usaremos o método Math.ceil para arredondar a data para cima
+document.write("<br><br> Diferença de dias entre as duas datas: " +Math.ceil(milissegundos_entre_datas/milissegundos_por_dias))
+    
+
+
+
+    
+    
+    
+    
+    
+    
+// link da W3S contendo mais informações: https://www.w3schools.com/jsref/jsref_obj_date.asp
+    
+    
+    
+</script>

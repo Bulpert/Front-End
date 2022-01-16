@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+
+  
+  <script>
+  //destructuring
+
+  let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão']
+
+  //let [a, b, , c] = frutas //pular um indice
+  let [a, b = 'Abacate', c, d, e = 'Banana'] = frutas
+
+  //console.log(a,b,c,d,e)
+  let coisas = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['José', 'Maria']]
+  
+  // atribuindo o valor da posição 2 do primeiro array ('pera') na variável a3
+  let [[,,a3,],[,n2]] = coisas
+
+  
+  
+  
+  console.log(a3)
+  </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
