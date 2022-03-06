@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before{
+	
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+/*Aplicando o scroll na vertical (Y)*/
+
+/*
+.container-scroll{
+	
+	
+	width: 100vw;
+	height: 100vh;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+}
+
+scroll{
+	display:flex;
+	flex: none;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% - 120px);
+	height: 100%;
+	scroll-snap-align: start;
+	
+	Com essa propriedade abaixo, podemos definir que apareça um pedacinho da section da esquerda na próxima section
+	scroll-margin-right: 120px;
+	
+}
+*/
+
+
+
+
+/*Aplicando o scroll na horizontal (X)*/
+
+.container-scroll{
+	
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	scroll-snap-type: x mandatory;
+	overflow-x: scroll;
+}
+
+scroll{
+	display:flex;
+	flex: none;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% - 120px);
+	height: 100%;
+	scroll-snap-align: start;
+	
+/*	Com essa propriedade abaixo, podemos definir que apareça um pedacinho da section da esquerda na próxima section*/
+	scroll-margin-right: 120px;
+	
+}
+
+scroll:nth-of-type(1){
+	background: purple;
+}
+
+scroll:nth-of-type(2){
+	background: red;
+}
+
+scroll:nth-of-type(3){
+	background: yellow;
+}
+
+scroll:nth-of-type(4){
+	background: blue;
+}
+
+
+raquel{
+	color: red;
+}
