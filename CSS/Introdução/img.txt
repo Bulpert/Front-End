@@ -1,0 +1,17 @@
+
+	#conteudo{
+		
+		position: relative !important;
+	}
+	
+	
+	
+	body{
+		background-image: url('http://s.anapro.com.br/a-p/arquivos_global/46fea370-7bde-4715-812e-d0758a84ed59.png');
+		background-repeat: repeat-y!important;
+		position: absolute!important;
+		background-size: cover !important; 
+		
+		
+	}
+	
