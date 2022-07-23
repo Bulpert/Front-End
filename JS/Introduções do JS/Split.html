@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SCRIPT PARA VENDAS AGRUPADAS</title>
+	
+	
+	
+<script>
+	
+//						COLOQUE A TAG HTML NO CONTRATO PARA QUE O RESULTADO DA VARIÁVEL ANAPRO POSSA SER TRATADA NO JS
+	
+	
+//		<span style="display: none" id="unidadesAgrupadas">{UNIDADE_NUMERO}</span>
+//		var textoVariavelAnapro = document.getElementById("unidadesAgrupadas").innerHTML
+						
+//						CÓDIGO COM VENDA AGRUPADA AP + VAGA
+	
+						var textoVariavelAnapro = 'U-107, VG-02'
+						
+						var textosemespaco= textoVariavelAnapro.replaceAll(" ", "")
+//						Captando o texto PHP
+						
+						
+						
+						
+//						PEGANDO VAGA E AP
+						
+						var ArrayDasQuadrasLotes = textosemespaco.split(",")
+						
+						
+						var numeroDaUnidade = ArrayDasQuadrasLotes[0].replace("U-", "")
+						
+						var numeroDaVaga = ArrayDasQuadrasLotes[1].replace("VG-", "")
+						
+						
+						
+						
+					
+	
+	
+	
+						document.write("Unidade: "+numeroDaUnidade+" e Vaga: "+ numeroDaVaga)
+		
+						
+						document.write("<br>")
+		
+						
+						
+						//	COM LOTE
+	
+	
+	
+						var textoLote = 'PHP A-07, PHP A-19, PHP A-18'
+						
+						var textosemespaco= textoLote.replaceAll(" ", "")
+//						Captando o texto PHP
+						var parteQuePrecisaSerRetirada = textoLote.substr(0,3)
+						
+						
+						
+//						REMOVENDO AS VIRGULAS
+						var removendoVirgula = textoLote.replaceAll(",","")
+						
+						
+						
+						
+//						PEGANDO LOTES E QUADRAS
+						
+						var ArrayDasQuadrasLotes = removendoVirgula.split(parteQuePrecisaSerRetirada)
+						
+						
+						
+//						A POSIÇÃO 0 DO ARRAY PRINCIPAL ESTÁ UM ESPAÇO
+						
+						
+//						TRATANDO A PRIMEIRA UNIDADE
+						var ArrayDaPrimeiraUnidade = ArrayDasQuadrasLotes[1].split("-")
+						
+						var QuadraUm = ArrayDaPrimeiraUnidade[0]
+						
+						var LoteUm = ArrayDaPrimeiraUnidade[1]
+						
+						
+						
+//						TRATANDO A SEGUNDA UNIDADE
+						var ArrayDaSegundaUnidade = ArrayDasQuadrasLotes[2].split("-")
+						
+						var QuadraDois = ArrayDaSegundaUnidade[0]
+						
+						var LoteDois = ArrayDaSegundaUnidade[1]
+						
+						
+//						TRATANDO A TERCEIRA UNIDADE
+						var ArrayDaTerceiraUnidade = ArrayDasQuadrasLotes[3].split("-")
+						
+						var QuadraTres = ArrayDaTerceiraUnidade[0]
+						
+						var LoteTres = ArrayDaTerceiraUnidade[1]
+						
+						
+					
+	
+	
+	
+						document.write("Quadra: "+QuadraUm+" e Lote: "+ LoteUm)
+						</script>	
+</head>
+
+<body>
+</body>
+</html>

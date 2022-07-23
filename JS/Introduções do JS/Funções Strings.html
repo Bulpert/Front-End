@@ -48,6 +48,37 @@ document.write("Método toLowerCase(): "+nome.toLowerCase()+"<br>")
 // O método trim() remove todos os espaços em branco nas extremidades
 document.write("Método trim(): "+nome.trim()+"<br>") 
     
+	
+//PARA VENDA AGRUPADA
+	
+var textoVariavelAnapro = 'T1-012, DP-B05'
+
+	var ap = textoVariavelAnapro.slice(3,6)
+
+	var dp = textoVariavelAnapro.slice(11,14)
+	
+	var dp2 = textoVariavelAnapro.slice(19,22)
+	
+	var dp3 = textoVariavelAnapro.slice(27,32)
+	
+	var tamanhoVariavel = textoVariavelAnapro.length
+	
+
+		
+	
+	document.write(tamanhoVariavel)
+	
+	if(tamanhoVariavel <= 14){
+		document.write("&emsp;"+ap + " Depósito: " + dp)
+	}
+	
+	if(tamanhoVariavel >= 15 && tamanhoVariavel <= 22){
+		document.write("&emsp;" + ap + " Depósitos: " + dp + " e " + dp2)
+	}
+		
+	if(tamanhoVariavel >= 23){
+		document.write(ap + " Depósitos: " + dp + " , " + dp2 + " e " + dp3)
+	}		
     
 // link da W3S contendo mais informações: https://www.w3schools.com/jsref/jsref_obj_string.asp
     
